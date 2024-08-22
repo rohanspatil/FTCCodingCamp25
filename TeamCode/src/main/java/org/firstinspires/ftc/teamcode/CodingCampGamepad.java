@@ -11,7 +11,6 @@ public class CodingCampGamepad extends LinearOpMode {
 
     DcMotor testMotor;
     Servo testServo;
-    Gamepad testGamepad;
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -23,20 +22,20 @@ public class CodingCampGamepad extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
-            testMotor.setPower(testGamepad.right_stick_y);
+            //testMotor.setPower(testGamepad.right_stick_y);
 
-            if (testGamepad.a) {
+            if (this.gamepad1.a) {
                 testServo.setPosition(1);
-            } else if (testGamepad.b) {
+            } else if (this.gamepad1.b) {
                 testServo.setPosition(0);
             }
         }
     }
 
-    public void moveMotorToPos(int encoderPos) {
+    /*public void moveMotorToPos(int encoderPos) {
         while (testMotor.getCurrentPosition() < encoderPos) {
             testMotor.setPower(0.5);
         }
         testMotor.setPower(0);
-    }
+    }*/
 }
