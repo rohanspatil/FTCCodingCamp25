@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -15,17 +16,19 @@ public class CodingCampTankDrive1 extends LinearOpMode {
 
     DcMotor rightFrontMotor, leftFrontMotor, rightRearMotor, leftRearMotor;
     Servo testServo;
-    Gamepad testGamepad;
     TouchSensor testTouchSensor;
     DistanceSensor testDistanceSensor;
 
     @Override
     public void runOpMode() throws InterruptedException {
 
-        rightFrontMotor = hardwareMap.dcMotor.get("RightFrontMotor");
-        leftFrontMotor = hardwareMap.dcMotor.get("leftFrontMotor");
-        rightRearMotor = hardwareMap.dcMotor.get("RightRearMotor");
-        leftRearMotor = hardwareMap.dcMotor.get("LeftRearMotor");
+        rightFrontMotor = hardwareMap.dcMotor.get("frontRightMotor");
+        leftFrontMotor = hardwareMap.dcMotor.get("frontLeftMotor");
+        rightRearMotor = hardwareMap.dcMotor.get("backRightMotor");
+        leftRearMotor = hardwareMap.dcMotor.get("backLeftMotor");
+
+        rightRearMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+        rightFrontMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
         testServo = hardwareMap.servo.get("TestServo");
 
@@ -37,11 +40,11 @@ public class CodingCampTankDrive1 extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
-            rightFrontMotor.setPower(testGamepad.right_stick_y);
-            rightRearMotor.setPower(testGamepad.right_stick_y);
+            rightFrontMotor.setPower(this.gamepad1.right_stick_y);
+            rightRearMotor.setPower(this.gamepad1.right_stick_y);
 
-            leftFrontMotor.setPower(-testGamepad.left_stick_y);
-            leftRearMotor.setPower(-testGamepad.left_stick_y);
+            leftFrontMotor.setPower(this.gamepad1.left_stick_y);
+            leftRearMotor.setPower(this.gamepad1.left_stick_y);
         }
     }
 }

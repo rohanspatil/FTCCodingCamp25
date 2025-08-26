@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
+import androidx.core.math.MathUtils;
+
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -22,13 +24,19 @@ public class CodingCampGamepad extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
-            //testMotor.setPower(testGamepad.right_stick_y);
+            double leftStickY = this.gamepad1.left_stick_y;
+            telemetry.addData("leftStickY: ", leftStickY);
+            if (leftStickY < 0.2 && leftStickY > -0.2) {
+                leftStickY = 0;
+            }
+            testMotor.setPower(leftStickY);
 
             if (this.gamepad1.a) {
                 testServo.setPosition(1);
             } else if (this.gamepad1.b) {
                 testServo.setPosition(0);
             }
+            telemetry.update();
         }
     }
 

@@ -26,11 +26,14 @@ public class CodingCampTouchSensor extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
+            telemetry.addData("Touch Sensor Status: ", testTouchSensor.isPressed());
+            telemetry.addData("Touch Sensor Value: ", testTouchSensor.getValue());
             if (testTouchSensor.isPressed()) {
                 testMotor.setPower(0.5);
             } else {
                 testMotor.setPower(0);
             }
+            telemetry.update();
         }
     }
 

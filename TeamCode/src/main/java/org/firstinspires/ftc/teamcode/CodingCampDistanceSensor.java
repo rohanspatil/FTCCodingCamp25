@@ -31,11 +31,13 @@ public class CodingCampDistanceSensor extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
+            telemetry.addData("Distane: ", testDistanceSensor.getDistance(DistanceUnit.CM));
             if (testDistanceSensor.getDistance(DistanceUnit.CM) < 10) {
                 testMotor.setPower(0.5);
             } else {
                 testMotor.setPower(0);
             }
+            telemetry.update();
         }
     }
 

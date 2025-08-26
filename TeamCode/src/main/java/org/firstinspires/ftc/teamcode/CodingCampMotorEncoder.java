@@ -20,12 +20,14 @@ public class CodingCampMotorEncoder extends LinearOpMode {
         telemetry.update();
         waitForStart();
 
-        moveMotorToPos(1000);
+        moveMotorToPos(10000);
     }
 
     public void moveMotorToPos(int encoderPos) {
+        testMotor.setPower(0.5);
         while (testMotor.getCurrentPosition() < encoderPos) {
-            testMotor.setPower(0.5);
+            telemetry.addData("Motor Position: ", testMotor.getCurrentPosition());
+            telemetry.update();
         }
         testMotor.setPower(0);
     }

@@ -27,7 +27,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package org.firstinspires.ftc.teamcode;
+/*package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -35,9 +35,9 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import java.util.List;
 import org.firstinspires.ftc.robotcore.external.hardware.camera.BuiltinCameraDirection;
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
-import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
+//import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
 import org.firstinspires.ftc.vision.VisionPortal;
-import org.firstinspires.ftc.vision.tfod.TfodProcessor;
+//import org.firstinspires.ftc.vision.tfod.TfodProcessor;
 
 /**
  * This 2023-2024 OpMode illustrates the basics of TensorFlow Object Detection,
@@ -45,7 +45,7 @@ import org.firstinspires.ftc.vision.tfod.TfodProcessor;
  *
  * Use Android Studio to Copy this Class, and Paste it into your team's code folder with a new name.
  * Remove or comment out the @Disabled line to add this OpMode to the Driver Station OpMode list.
- */
+
 @TeleOp(name = "Concept: TensorFlow Object Detection", group = "Concept")
 public class CodingCampTensorFlow extends LinearOpMode {
 
@@ -53,12 +53,12 @@ public class CodingCampTensorFlow extends LinearOpMode {
 
     /**
      * {@link #tfod} is the variable to store our instance of the TensorFlow Object Detection processor.
-     */
+
     private TfodProcessor tfod;
 
     /**
      * {@link #visionPortal} is the variable to store our instance of the vision portal.
-     */
+
     private VisionPortal visionPortal;
 
     @Override
@@ -99,7 +99,7 @@ public class CodingCampTensorFlow extends LinearOpMode {
 
     /**
      * Initialize the TensorFlow Object Detection processor.
-     */
+
     private void initTfod() {
 
         // Create the TensorFlow processor by using a builder.
@@ -158,7 +158,7 @@ public class CodingCampTensorFlow extends LinearOpMode {
 
     /**
      * Function to add telemetry about TensorFlow Object Detection (TFOD) recognitions.
-     */
+
     private void telemetryTfod() {
 
         List<Recognition> currentRecognitions = tfod.getRecognitions();
@@ -178,3 +178,4 @@ public class CodingCampTensorFlow extends LinearOpMode {
     }   // end method telemetryTfod()
 
 }   // end class
+*/

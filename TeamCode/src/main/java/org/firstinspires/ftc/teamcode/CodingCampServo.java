@@ -23,5 +23,7 @@ public class CodingCampServo extends LinearOpMode {
         testServo.setPosition(1);
         sleep(2000);
         testServo.setPosition(0);
+        sleep(2000);
+        testServo.setPosition(1);
     }
 }
