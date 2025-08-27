@@ -15,8 +15,6 @@ public class CodingCampDistanceSensor extends LinearOpMode {
 
     DcMotor testMotor;
     Servo testServo;
-    Gamepad testGamepad;
-    TouchSensor testTouchSensor;
     DistanceSensor testDistanceSensor;
 
     @Override
@@ -24,14 +22,13 @@ public class CodingCampDistanceSensor extends LinearOpMode {
 
         testMotor = hardwareMap.dcMotor.get("TestMotor");
         testServo = hardwareMap.servo.get("TestServo");
-        testTouchSensor = hardwareMap.touchSensor.get("TestTouchSensor");
         testDistanceSensor = hardwareMap.get(DistanceSensor.class, "TestDistanceSensor");
         telemetry.addData("Robot Status: ", "Initialized");
         telemetry.update();
         waitForStart();
 
         while (opModeIsActive()) {
-            telemetry.addData("Distane: ", testDistanceSensor.getDistance(DistanceUnit.CM));
+            telemetry.addData("Distance: ", testDistanceSensor.getDistance(DistanceUnit.CM));
             if (testDistanceSensor.getDistance(DistanceUnit.CM) < 10) {
                 testMotor.setPower(0.5);
             } else {
@@ -41,10 +38,10 @@ public class CodingCampDistanceSensor extends LinearOpMode {
         }
     }
 
-    public void moveMotorToPos(int encoderPos) {
+    /*public void moveMotorToPos(int encoderPos) {
         while (testMotor.getCurrentPosition() < encoderPos) {
             testMotor.setPower(0.5);
         }
         testMotor.setPower(0);
-    }
+    }*/
 }
